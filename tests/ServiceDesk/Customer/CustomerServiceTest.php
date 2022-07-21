@@ -15,8 +15,15 @@ use PHPUnit\Framework\TestCase;
 
 class CustomerServiceTest extends TestCase
 {
-    private ServiceDeskClient|MockObject|null $client;
-    private UserService|MockObject|null $userService;
+    /**
+     * @var ServiceDeskClient|MockObject|null
+     */
+    private $client;
+
+    /**
+     * @var UserService|MockObject|null
+     */
+    private $userService;
     private ?CustomerService $uut;
     private string $uri = '/customer';
 

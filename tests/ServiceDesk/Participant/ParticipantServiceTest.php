@@ -13,8 +13,12 @@ use PHPUnit\Framework\TestCase;
 
 class ParticipantServiceTest extends TestCase
 {
-    private ServiceDeskClient|MockObject|null $client;
-    private ParticipantService|null $uut;
+    /**
+     * @var ServiceDeskClient|MockObject|null
+     */
+    private $client;
+
+    private ?ParticipantService $uut;
 
     public function setUp(): void
     {

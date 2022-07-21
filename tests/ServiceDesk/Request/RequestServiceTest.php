@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace JiraRestApi\Test\ServiceDesk\Request;
 
-use JetBrains\PhpStorm\Pure;
 use JiraRestApi\Issue\Attachment;
 use JiraRestApi\Issue\Issue;
 use JiraRestApi\Issue\IssueField;
@@ -28,9 +27,21 @@ use stdClass;
 
 class RequestServiceTest extends TestCase
 {
-    private ServiceDeskClient|MockObject|null $client;
-    private CommentService|MockObject|null $commentService;
-    private AttachmentService|MockObject|null $attachmentService;
+    /**
+     * @var ServiceDeskClient|MockObject|null
+     */
+    private $client;
+
+    /**
+     * @var CommentService|MockObject|null
+     */
+    private $commentService;
+
+    /**
+     * @var AttachmentService|MockObject|null
+     */
+    private $attachmentService;
+
     private ?RequestService $uut;
     private string $uri = '/request';
     private int $serviceDeskId = 10;
